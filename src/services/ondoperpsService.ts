@@ -1,4 +1,4 @@
-const BASE_URL = 'https://api.ondoperps.xyz/v1'
+const BASE_URL = '/api/ondo'
 
 export interface OndoTrade {
   market: string

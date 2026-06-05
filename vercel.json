@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/ondo/:path*",
+      "destination": "https://api.ondoperps.xyz/v1/:path*"
+    }
+  ]
+}
