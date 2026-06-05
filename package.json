@@ -1,0 +1,45 @@
+{
+  "name": "hl-spread-poc",
+  "version": "1.0.0",
+  "description": "Hyperliquid spread & market making opportunity scanner",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "spread": "tsx src/scripts/spread.ts",
+    "scan:bid-ask": "tsx src/scripts/scan-bid-ask.ts",
+    "scan:hip3": "tsx src/scripts/scan-hip3.ts",
+    "monitor": "tsx src/scripts/monitor.ts",
+    "monitor:hip3": "tsx src/scripts/monitor-hip3.ts",
+    "monitor:direction": "tsx src/scripts/monitor-direction.ts",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@nktkas/hyperliquid": "^0.31.0",
+    "@tanstack/react-query": "^5.100.14",
+    "chalk": "^5.4.1",
+    "cli-table3": "^0.6.5",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.2.15",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.2",
+    "autoprefixer": "^10.5.0",
+    "jsdom": "^29.1.1",
+    "playwright": "^1.60.0",
+    "postcss": "^8.5.15",
+    "tailwindcss": "^3",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3",
+    "vite": "^8.0.14",
+    "vitest": "^3.2.0"
+  }
+}
