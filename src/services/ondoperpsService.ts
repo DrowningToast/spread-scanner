@@ -37,12 +37,11 @@ export interface OndoDepthResponse {
 
 export class OndoperpsService {
   async getTrades(params: GetTradesParams): Promise<OndoTradesResponse> {
-    const url = new URL(`${BASE_URL}/perps/trades`)
-    url.searchParams.set('market', params.market)
-    if (params.limit !== undefined) url.searchParams.set('limit', String(params.limit))
-    if (params.cursor !== undefined) url.searchParams.set('cursor', params.cursor)
+    const qs = new URLSearchParams({ market: params.market })
+    if (params.limit !== undefined) qs.set('limit', String(params.limit))
+    if (params.cursor !== undefined) qs.set('cursor', params.cursor)
 
-    const response = await fetch(url.toString())
+    const response = await fetch(`${BASE_URL}/perps/trades?${qs.toString()}`)
     if (!response.ok) {
       throw new Error(`HTTP ${response.status}`)
     }
@@ -50,11 +49,9 @@ export class OndoperpsService {
   }
 
   async getDepth(market: string): Promise<OndoDepthResponse> {
-    const url = new URL(`${BASE_URL}/perps/depth`)
-    url.searchParams.set('market', market)
-    url.searchParams.set('depth', '1')
+    const qs = new URLSearchParams({ market, depth: '1' })
 
-    const response = await fetch(url.toString())
+    const response = await fetch(`${BASE_URL}/perps/depth?${qs.toString()}`)
     if (!response.ok) {
       throw new Error(`HTTP ${response.status}`)
     }
